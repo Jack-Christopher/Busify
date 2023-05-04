@@ -1,9 +1,9 @@
-<!--Nav-->
+{{-- navbar for welcome view --}}
 <nav class="bg-[#111827] fixed w-full z-10 top-0 shadow hover:bg-slate-850">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
 
-            {{-- Logo --}}
+            <!-- Logo -->
             <div class="pl-4 flex items-center">
                 <div class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
                     <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            {{-- Options --}}
+            <!-- Options -->
             <div class="hidden flex-1 text-left ml-16 space-x-8 md:flex lg:flex">
                 <a href="/" class="text-lg text-gray-200 no-underline">Home</a>
                 <a href="/about" class="ml-4 text-lg text-gray-200 no-underline">About</a>
@@ -22,15 +22,21 @@
             <div class="hidden relative md:flex lg:flex">
                 <div>
                     @if (Route::has('login'))
-                        <div class="hidden fixed top-0 right-0 px-10 py-4 justify-between sm:block">
+                        <div class="hidden fixed top-0 right-0 px-10 py-4 justify-between sm:flex">
                             @auth
                                 <a href="{{ url('/dashboard') }}" class="text-lg text-gray-200 no-underline">
                                     {{ __('Dashboard') }}
                                 </a>
                                 @if (Route::has('logout'))
-                                    <a href="{{ route('logout') }}" class="ml-4 text-lg text-gray-200 no-underline hover:text-gray-50 hover:underline hover:text-xl">
-                                        {{ __('Logout') }}
-                                    </a>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+
+                                        <a href="{{ route('logout') }}"  class="ml-4 text-lg text-gray-200 no-underline hover:text-gray-50 hover:underline hover:text-xl"
+                                                onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                                            {{ __('Log Out') }}
+                                        </a>
+                                    </form>
                                 @endif
                             @else
                                 <a href="{{ route('login') }}" class="text-lg text-gray-300 no-underline hover:text-gray-50 hover:underline hover:text-xl">
@@ -48,7 +54,7 @@
                 </div>
             </div>
 
-            {{-- Mobile menu button popdown --}}
+            <!-- Mobile menu button popdown -->
             <div class=" md:hidden lg:hidden">
                 
                 <div class="relative">
