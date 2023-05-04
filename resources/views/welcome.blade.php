@@ -1,8 +1,6 @@
-@extends('layouts.base')
-
-@section('content')
+<x-app-layout>
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900 leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
-        <x-blocks.navbar />
+        {{-- <x-blocks.navbar /> --}}
 
         <!--Hero-->
         <div class="pt-24 pl-8 pr-8 sm:pr-0 sm:pl-16">
@@ -717,4 +715,4 @@
             return false;
         }
     </script>
-@endsection
+</x-app-layout>

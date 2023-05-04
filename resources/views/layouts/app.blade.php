@@ -16,7 +16,13 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+
+            {{-- check current route --}}
+            @if (request()->routeIs('dashboard'))
+                @include('layouts.navigation')
+            @elseif (request()->routeIs('welcome'))
+                <x-blocks.navbar />
+            @endif
 
             <!-- Page Heading -->
             @if (isset($header))
