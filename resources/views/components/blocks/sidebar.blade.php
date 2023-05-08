@@ -12,9 +12,9 @@
                         <path d='M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z'></path>
                     </x-elements.sidebar-button>
                  
-                    <x-blocks.sidebar-submenu name="Inicio" :options="[
+                    {{-- <x-blocks.sidebar-submenu name="Inicio" :options="[
                         ['Opción 1', 'Opción 2']
-                    ]" />
+                    ]" /> --}}
                 </li>
                 <hr class="my-2 border-t-4 border-gray-200 dark:border-gray-700">
                 <li>
@@ -24,7 +24,7 @@
                     
                     <x-blocks.sidebar-submenu name="Boletaje" :options="[
                         ['Boletos y reservas'],
-                        ['Boletas con fecha abierta', 'Boletos por reintegro', 'Boletos por devolución'],
+                        ['Boletos con fecha abierta', 'Boletos por reintegro', 'Boletos por devolución'],
                         ['Relación de documentos', 'Documentos anulados'],
                         ['Manifiesto de pasajeros', 'Hoja de embarque', 'Hoja de ruta y Manifiesto MTC'],
                         ['Números faltantes'],
@@ -52,8 +52,8 @@
                     </x-elements.sidebar-button>
 
                     <x-blocks.sidebar-submenu name="Encomiendas" :options="[
-                        ['Carga y encomiendas', 'Relación de documentos', 'Documentos con/sin referencias'],
-                        ['Manifiesto de carga', 'Entrega de carga/documentos'],
+                        ['Carga y encomiendas', 'Relación de documentos', 'Documentos con-sin referencias'],
+                        ['Manifiesto de carga', 'Entrega de carga-documentos'],
                         ['Números faltantes', 'Consolidado de ventas', 'Flujo de caja'],
                         ['Facturación electrónica']
                     ]" />
@@ -65,10 +65,10 @@
                     </x-elements.sidebar-button>
                 
                     <x-blocks.sidebar-submenu name="Gerencia" :options="[
-                        ['Registro de Ventas (Boletaje)', 'Registro de Ventas (Encomiendas)'],
+                        ['Registro de Ventas por Boletaje', 'Registro de Ventas por Encomiendas'],
                         ['Recaudación de por salida'],
-                        ['Estadísticas por cliente', 'Estadísticas por omnibus (Boletaje)', 'Estadísticas por omnibus (Encomiendas)', 'Estadísticas por turnos'],
-                        ['Gráfico de barras (Boletaje)', 'Gráfico de barras (Boletaje-Rutas)', 'Gráfico de barras (Encomiendas)', 'Control de tripulación'],
+                        ['Estadísticas por cliente', 'Estadísticas por omnibus por Boletaje', 'Estadísticas por omnibus por Encomiendas', 'Estadísticas por turnos'],
+                        ['Gráfico de barras por Boletaje', 'Gráfico de barras por Boletaje-Rutas', 'Gráfico de barras por Encomiendas', 'Control de tripulación'],
                         ['Detalle de ventas', 'Resume de ventas', 'Liquidación por día'],
                         ['Estadísticas de carga agrupado', 'Liquidaciones', 'Cálculo de comisiones por buses', 'Configuración de libros y cuentas contables', 'Exportar transferencias', 'Importar transferencias']
                     ]" />
@@ -83,7 +83,7 @@
                         ['Configuración de salidas'],
                         ['Sucursales', 'Zonas', 'Puntos de entrega', 'Ubigeo'],
                         ['Servicios', 'Comisionistas', 'Croquis-Planos', 'Omnibus', 'Productos y conceptos'],
-                        ['Clientes (Boletaje)', 'Clientes (Encomiendas)'],
+                        ['Clientes por Boletaje', 'Clientes por Encomiendas'],
                         ['Docs. de identidad', 'Personal', 'Cargos'],
                         ['Docs. Boletaje Encomiendas', 'Condiciones de documento'],
                         ['Formatos de impresión']
@@ -98,7 +98,7 @@
                     <x-blocks.sidebar-submenu name="Útiles" :options="[
                         ['Cambiar de usuario', 'Administrador de accesos'],
                         ['Consola de mensajes', 'Calculadora'],
-                        ['Corrector/Cambio de correlativo Boletaje', 'Eliminar/Anular Boletajes', 'Correcto de numeración y fechas de encomiendas', 'Series por sucursal', 'Series por terminal PC', 'Recálculo de viajes por cliente'],
+                        ['Corrector-Cambio de correlativo Boletaje', 'Eliminar-Anular Boletajes', 'Corrector de numeración y fechas de encomiendas', 'Series por sucursal', 'Series por terminal PC', 'Recálculo de viajes por cliente'],
                         ['Registro de auditoría', 'Registro de bloqueos'],
                         ['Opciones de sistema'],
                         ['Temas de escritorio']
