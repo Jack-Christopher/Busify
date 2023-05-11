@@ -11,32 +11,42 @@
                 </div>
 
                 <!-- Navigation Links -->
-                {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        Inicio
-                    </x-nav-link>
-                    <x-nav-link href="#" :active="request()->routeIs('option2')">
-                        Boletaje
-                    </x-nav-link>
-                    <x-nav-link href="#" :active="request()->routeIs('option3')">
-                        Finanzas
-                    </x-nav-link>
-                    <x-nav-link href="#" :active="request()->routeIs('option3')">
-                        Encomiendas
-                    </x-nav-link>
-                    <x-nav-link href="#" :active="request()->routeIs('option3')">
-                        Gerencia
-                    </x-nav-link>
-                    <x-nav-link href="#" :active="request()->routeIs('option3')">
-                        Administración
-                    </x-nav-link>
-                    <x-nav-link href="#" :active="request()->routeIs('option3')">
-                        Útiles
-                    </x-nav-link>
-                    <x-nav-link href="#" :active="request()->routeIs('option3')">
-                        Ayuda
-                    </x-nav-link>
-                </div> --}}
+                @php
+                    $url = request()->path();
+                    $url = explode('/', $url);
+                @endphp
+
+                <x-nav-link href="#"
+                    class="ml-4 sm:ml-10 sm:p-4 font-bold font-sans text-gray-800 dark:text-gray-200">
+                    {{-- get current url--}}
+                    @if (count($url) > 1)
+                        <nav
+                            class="relative flex w-full flex-wrap items-center justify-between bg-neutral-100 py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:flex-wrap lg:justify-start rounded-lg">
+                            <div class="flex w-full flex-wrap items-center justify-between px-3">
+                                <nav class="bg-grey-light w-full rounded-md sm:px-4" aria-label="breadcrumb">
+                                    <ol class="list-reset flex text-lg">
+                                        <li>
+                                        <button class="text-neutral-500 hover:text-neutral-600 dark:text-neutral-200">
+                                            {{ ucfirst($url[1]) }}
+                                        </button>
+                                        </li>
+                                        <li>
+                                            <span class="mx-2 text-neutral-500 dark:text-neutral-200">
+                                                /
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <button class="text-neutral-500 hover:text-neutral-600 dark:text-neutral-200">
+                                                {{ ucfirst($url[2]) }}
+                                            </button>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                            </nav>
+                    @endif
+                </x-nav-link>
+
             </div>
 
             <!-- Settings Dropdown -->
