@@ -1,5 +1,4 @@
 <aside 
-    x-data="{ isVisible: window.innerWidth >= 640, selected: '', option: '' }"
     class="fixed top-0 left-0 z-40 h-screen pt-20 transition-transform  translate-x-0 aria-label="Sidebar">
     <div class="flex flex-row h-full -mt-4 -pr-16" x-cloak
         :class="{ 'w-80': isVisible, 'w-12': ! isVisible }">
@@ -121,7 +120,8 @@
         </div>
 
 
-        <div class="flex items-center -left-16 -ml-2">
+        <div class="flex items-center -left-16 -ml-2"
+            x-show="window.innerWidth < 640">
             <button @click="isVisible = ! isVisible" class="inline-flex items-center justify-center py-2 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-400 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
                 <p class="mx-2 text-3xl font-extrabold text-gray-700 dark:text-gray-200 rounded-full p-2"
                     {{-- :class="{'hidden': isVisible, 'inline-flex': ! isVisible }" --}}
