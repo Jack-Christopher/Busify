@@ -40,6 +40,18 @@
                                                 {{ ucfirst($url[2]) }}
                                             </button>
                                         </li>
+                                        @if (count($url) > 3)
+                                            <li>
+                                                <span class="mx-2 text-neutral-500 dark:text-neutral-200">
+                                                    /
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <button class="text-neutral-500 hover:text-neutral-600 dark:text-neutral-200">
+                                                    {{ ucfirst($url[3]) }}
+                                                </button>
+                                            </li>
+                                        @endif
                                     </ol>
                                 </nav>
                             </div>
