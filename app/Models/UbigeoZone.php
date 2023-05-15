@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class UbigeoZone extends Model
 {
     use HasFactory;
+
+    protected $table = 'ubigeo_zone';
 }
