@@ -12,16 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ubigeo_zone', function (Blueprint $table) {
-            $table->unsignedBigInteger('ubigeo_id');
+            $table->string('ubigeo_id', 6);
             $table->unsignedBigInteger('zone_id');
             $table->unsignedInteger('position');
             $table->timestamps();
 
-            $table->primary(['zone_id', 'ubigeo_id']);
             $table->foreign('ubigeo_id')
-                ->references('id')->on('ubigeo');
+                ->references('code')->on('ubigeo')
+                ->onDelete('cascade');
             $table->foreign('zone_id')
-                ->references('id')->on('zone');
+                ->references('id')->on('zone')
+                ->onDelete('cascade');
+            $table->primary(['zone_id', 'ubigeo_id']);
         });
     }
 

@@ -12,16 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('travel_time', function (Blueprint $table) {
-            $table->unsignedBigInteger('first_city_id');
-            $table->unsignedBigInteger('second_city_id');
-            $table->integer('time');
+            $table->string('first_city_id', 6);
+            $table->string('second_city_id', 6);
+            $table->integer('minutes');
             $table->timestamps();
 
+            $table->foreign('first_city_id')->references('code')->on('ubigeo');
+            $table->foreign('second_city_id')->references('code')->on('ubigeo');
             $table->primary(['first_city_id', 'second_city_id']);
-            $table->foreign('first_city_id')
-                ->references('id')->on('ubigeo');
-            $table->foreign('second_city_id')
-                ->references('id')->on('ubigeo');
+
         });
     }
 
