@@ -7,7 +7,7 @@
         </div>
 
         {{-- vista principal --}}
-        <div class="flex-1 bg-white mt-[64px]"
+        <div class="flex-1 bg-white mt-[64px] p-4"
             :class="{'ml-80': window.innerWidth >= 640, 'ml-12': window.innerWidth < 640 }">
 
             @if ( request()->path() == 'dashboard' )
@@ -16,11 +16,8 @@
                 </h1>
                 <img src="{{ asset('img/dashboard.png') }}" alt="background" class="w-1/2 mx-auto">
             @else
-                {{-- component rendered from controller as parameter --}}
-                <x-dynamic-component :component="$componentName" />
+                <x-dynamic-component :component="$componentName" :data="$data" />
             @endif
-
-        
         </div>
     </div>
 </x-app-layout>
