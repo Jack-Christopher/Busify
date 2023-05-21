@@ -76,20 +76,19 @@ class ZonasController extends Controller
         $zone->name = $request->name;
         $zone->save();
 
-        // foreach ubigeo_id_i as $ubigeo_id
-        $i = 0;
+        // foreach ubigeo_i as $ubigeo_id
+        // store _i as position
         foreach ($request->all() as $key => $value) {
-            if (strpos($key, 'ubigeo_id_') !== false) {
+            if (strpos($key, 'ubigeo_') !== false) {
                 $ubigeoZone = new UbigeoZone();
                 // fill one zero if $value is less than 6 characters
                 $ubigeoZone->ubigeo_id = str_pad($value, 6, '0', STR_PAD_LEFT);
                 $ubigeoZone->zone_id = $zone->id;
-                $ubigeoZone->position = $i;
+                $ubigeoZone->position = intval(substr($key, 7));
                 $ubigeoZone->save();
-                $i++;
             }
         }
-        
+
         return back()
             ->with('message', 'Zona creada correctamente');
     }

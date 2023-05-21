@@ -19,13 +19,10 @@
             <label for="name">Nombre de la Zona</label>
             <input type="text" name="name" id="name" placeholder="Origen - Destino">
         </div>
-        <div class="flex flex-col py-4">
-            <h3> Seleccione las ciudades </h3>
+        <div class="flex flex-col pt-2">
+            <h3> Agregue las ciudades </h3>
 
-            <livewire:blocks.ubigeo-searcher 
-                :ubigeos="$data['ubigeos']"
-            />
-                
+            <livewire:blocks.ubigeo-searcher-group />                
             
         </div>
         <div class="flex flex-col py-4">
