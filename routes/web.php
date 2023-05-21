@@ -10,7 +10,7 @@ use App\Http\Controllers\Gerencia as Gerencia;
 use App\Http\Controllers\Administracion as Administracion;
 use App\Http\Controllers\Utiles as Utiles;
 use App\Http\Controllers\Ayuda as Ayuda;
-
+use App\Http\Controllers\WeatherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,10 @@ use App\Http\Controllers\Ayuda as Ayuda;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Generacion del Clima
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    //Weather
+    Route::get('/weather', [WeatherController::class, 'index']);
 
     // Dashboard
     Route::get('/dashboard', function () {  return view('dashboard');})->name('dashboard');
@@ -149,6 +155,5 @@ Route::middleware('auth')->group(function () {
 
     
 });
-
 
 require __DIR__.'/auth.php';
