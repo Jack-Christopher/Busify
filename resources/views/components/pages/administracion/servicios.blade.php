@@ -3,7 +3,7 @@
 @endphp
 
 <div class="flex flex-col items-center">
-    {{-- title all subsidiarys --}}
+    {{-- title all sucursals --}}
     <h1 class="text-3xl font-bold text-gray-700">Listado de Servicios</h1>
 
     @if (session('message') != null)
