@@ -13,8 +13,12 @@
         @endforeach
     </select>
 
-    <button class="bg-warning-500 hover:bg-warning-700 text-white font-bold px-2 ml-4 rounded-lg"
-        wire:click.prevent="add()" >
-        Agregar
-    </button>
+    @if ($addButton)
+        <button class="bg-warning-500 hover:bg-warning-700 text-white font-bold px-2 ml-4 rounded-lg"
+            wire:click.prevent="add()" >
+            Agregar
+        </button>
+    @else
+        <input type="hidden" name="ubigeo_id" id="ubigeo_id" value="{{ $selectedUbigeoCode }}">
+    @endif
 </div>

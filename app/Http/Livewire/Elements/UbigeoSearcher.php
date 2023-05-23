@@ -10,6 +10,7 @@ class UbigeoSearcher extends Component
     public $searchTerm;
     public $ubigeoOptions;
     public $selectedUbigeoCode;
+    public $addButton;
 
     public function mount()
     {
@@ -37,7 +38,8 @@ class UbigeoSearcher extends Component
             $this->ubigeoOptions = [];
         }
         return view('livewire.elements.ubigeo-searcher', [
-            'ubigeoOptions' => $this->ubigeoOptions
+            'ubigeoOptions' => $this->ubigeoOptions,
+            'addButton' => $this->addButton
         ]);
     }
 }
