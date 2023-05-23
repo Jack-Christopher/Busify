@@ -96,7 +96,16 @@ Route::middleware('auth')->group(function () {
 
     // Pages/Administracion
     Route::get('/dashboard/administracion/configuracion-de-salidas', [Administracion\ConfiguracionDeSalidasController::class, 'index'])->name('administracion.configuracion-de-salidas.index');
-    Route::get('/dashboard/administracion/sucursales', [Administracion\SucursalesController::class, 'index'])->name('administracion.sucursales.index');
+    
+    Route::controller(Administracion\SucursalesController::class)->group(function () {
+        Route::get('/dashboard/administracion/sucursales', 'index')->name('administracion.sucursales.index');
+        Route::get('/dashboard/administracion/sucursales/create', 'create')->name('administracion.sucursales.create');
+        Route::post('/dashboard/administracion/sucursales', 'store')->name('administracion.sucursales.store');
+        Route::get('/dashboard/administracion/sucursales/{id}', 'show')->name('administracion.sucursales.show');
+        Route::get('/dashboard/administracion/sucursales/{id}/edit', 'edit')->name('administracion.sucursales.edit');
+        Route::put('/dashboard/administracion/sucursales/{id}', 'update')->name('administracion.sucursales.update');
+        Route::delete('/dashboard/administracion/sucursales/{id}', 'destroy')->name('administracion.sucursales.destroy');
+    });
     
     Route::controller(Administracion\ZonasController::class)->group(function () {
         Route::get('/dashboard/administracion/zonas', 'index')->name('administracion.zonas.index');
@@ -107,10 +116,15 @@ Route::middleware('auth')->group(function () {
         Route::put('/dashboard/administracion/zonas/{id}', 'update')->name('administracion.zonas.update');
         Route::delete('/dashboard/administracion/zonas/{id}', 'destroy')->name('administracion.zonas.destroy');
     });
+
+    Route::resource('/dashboard/administracion/rutas', Administracion\RutasController::class)->names('administracion.rutas');
     
     Route::get('/dashboard/administracion/puntos-de-entrega', [Administracion\PuntosDeEntregaController::class, 'index'])->name('administracion.puntos-de-entrega.index');
     Route::get('/dashboard/administracion/ubigeo', [Administracion\UbigeoController::class, 'index'])->name('administracion.ubigeo.index');
-    Route::get('/dashboard/administracion/servicios', [Administracion\ServiciosController::class, 'index'])->name('administracion.servicios.index');
+    
+    Route::resource('/dashboard/administracion/servicios', Administracion\ServiciosController::class)->names('administracion.servicios');
+
+    
     Route::get('/dashboard/administracion/comisionistas', [Administracion\ComisionistasController::class, 'index'])->name('administracion.comisionistas.index');
     Route::get('/dashboard/administracion/croquis-planos', [Administracion\CroquisPlanosController::class, 'index'])->name('administracion.croquis-planos.index');
     Route::get('/dashboard/administracion/omnibus', [Administracion\OmnibusController::class, 'index'])->name('administracion.omnibus.index');
