@@ -1,6 +1,7 @@
 <div class="flex flex-col mt-2">
 
-    @livewire('elements.ubigeo-searcher')
+    @livewire('elements.ubigeo-searcher', ['addButton' => true])
+
 
     @foreach ($selectedOptions as $index => $option)
         <div class="flex flex-row">

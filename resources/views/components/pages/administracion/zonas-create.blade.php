@@ -22,7 +22,7 @@
         <div class="flex flex-col pt-2">
             <h3> Agregue las ciudades </h3>
 
-            <livewire:blocks.ubigeo-searcher-group />                
+            @livewire('blocks.ubigeo-searcher-group')
             
         </div>
         <div class="flex flex-col py-4">
