@@ -32,7 +32,15 @@ class ServiciosController extends Controller
      */
     public function create()
     {
-        //
+        $componentName = 'pages.administracion.serviciosCreate';
+
+        $data = [
+        ];
+
+        return view('dashboard', [
+            'componentName' => $componentName,
+            'data' => $data
+        ]);
     }
 
     /**
@@ -40,7 +48,13 @@ class ServiciosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $servicio = new Servicio();
+        $servicio->nombre = $request->nombre;
+        $servicio->descripcion = $request->descripcion;
+        $servicio->save();
+
+        return back()
+            ->with('message', 'Servicio creado con éxito');
     }
 
     /**
@@ -48,7 +62,18 @@ class ServiciosController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $componentName = 'pages.administracion.serviciosShow';
+
+        $servicio = Servicio::find($id);
+
+        $data = [
+            'servicio' => $servicio
+        ];
+
+        return view('dashboard', [
+            'componentName' => $componentName,
+            'data' => $data
+        ]);
     }
 
     /**
@@ -72,6 +97,10 @@ class ServiciosController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $servicio = Servicio::find($id);
+        $servicio->delete();
+        
+        return back()
+            ->with('message', 'Sucursal eliminada con éxito');
     }
 }
