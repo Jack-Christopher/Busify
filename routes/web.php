@@ -121,6 +121,10 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/dashboard/administracion/puntos-de-entrega', [Administracion\PuntosDeEntregaController::class, 'index'])->name('administracion.puntos-de-entrega.index');
     Route::get('/dashboard/administracion/ubigeo', [Administracion\UbigeoController::class, 'index'])->name('administracion.ubigeo.index');
+
+    Route::resource('/dashboard/administracion/viajes', Administracion\ViajesController::class)->names('administracion.viajes');
+    
+    Route::resource('/dashboard/administracion/duracion-de-viaje', Administracion\DuracionDeViajeController::class)->names('administracion.duracion-de-viaje');
     
     Route::resource('/dashboard/administracion/servicios', Administracion\ServiciosController::class)->names('administracion.servicios');
 
