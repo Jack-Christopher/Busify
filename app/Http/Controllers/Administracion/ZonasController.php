@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Zone;
 use App\Models\Ubigeo;
 use App\Models\UbigeoZone;
+use App\Models\DuracionViaje;
 
 class ZonasController extends Controller
 {
@@ -76,12 +77,9 @@ class ZonasController extends Controller
         $zone->name = $request->name;
         $zone->save();
 
-        // foreach ubigeo_i as $ubigeo_id
-        // store _i as position
         foreach ($request->all() as $key => $value) {
             if (strpos($key, 'ubigeo_') !== false) {
                 $ubigeoZone = new UbigeoZone();
-                // fill one zero if $value is less than 6 characters
                 $ubigeoZone->ubigeo_id = str_pad($value, 6, '0', STR_PAD_LEFT);
                 $ubigeoZone->zone_id = $zone->id;
                 $ubigeoZone->position = intval(substr($key, 7));
@@ -89,8 +87,9 @@ class ZonasController extends Controller
             }
         }
 
-        return back()
-            ->with('message', 'Zona creada correctamente');
+        return redirect()
+            ->route('administracion.duracion-de-viaje.create', ['zone_id' => $zone->id])
+            ->with('message', 'Zona creada correctamente. Ahora debe registrar la duración de cada tramo de viaje');
     }
 
     public function destroy($id)
