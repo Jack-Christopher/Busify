@@ -80,7 +80,7 @@
 
                     <x-blocks.sidebar-submenu name="Administración" :options="[
                         ['Configuración de salidas'],
-                        ['Sucursales', 'Zonas', 'Rutas', 'Puntos de entrega', 'Ubigeo'],
+                        ['Sucursales', 'Zonas', 'Rutas', 'Puntos de entrega', 'Ubigeo', 'Viajes', 'Duracion de viaje'],
                         ['Servicios', 'Comisionistas', 'Croquis-Planos', 'Omnibus', 'Productos y conceptos'],
                         ['Clientes por Boletaje', 'Clientes por Encomiendas'],
                         ['Docs. de identidad', 'Personal', 'Cargos'],
