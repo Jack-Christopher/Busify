@@ -105,6 +105,7 @@ El proyecto Busify te permitirá realizar las siguientes acciones:
 <a href="https://github.com/AlbertLlica">
     <img src="https://avatars.githubusercontent.com/u/82473627?v=4" width="50px">
 </a>
+<br>
 Si deseas contribuir al proyecto Busify, sigue estos pasos:
 
 1. Haz un fork del repositorio.
