@@ -12,6 +12,10 @@ class UbigeoZone extends Model
 
     protected $table = 'ubigeo_zone';
 
+    public function ubigeo()
+    {
+        return $this->hasOne(Ubigeo::class, 'code', 'ubigeo_id');
+    }
 
     public function ubigeoName()
     {
