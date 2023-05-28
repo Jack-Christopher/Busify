@@ -96,7 +96,15 @@ El proyecto Busify te permitirá realizar las siguientes acciones:
 - Crear nuevos viajes, duración de viajes, servicios y sucursales según sea necesario.
 
 ## Contribución
-
+<a href="https://github.com/Jack-Christopher">
+    <img src="https://avatars.githubusercontent.com/u/64046377?v=4" width="50px">
+</a>
+<a href="https://github.com/Ronald-Gutierrez">
+    <img src="https://avatars.githubusercontent.com/u/113565299?v=4" width="50px">
+</a>
+<a href="https://github.com/AlbertLlica">
+    <img src="https://avatars.githubusercontent.com/u/82473627?v=4" width="50px">
+</a>
 Si deseas contribuir al proyecto Busify, sigue estos pasos:
 
 1. Haz un fork del repositorio.
