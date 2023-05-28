@@ -1,4 +1,5 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+
+<h1 align="center">BUSIFY</h1>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -7,60 +8,104 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+### Busify
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Busify es un proyecto de Laravel que se enfoca en la venta de boletos de viaje online. Proporciona funcionalidades para mostrar y crear viajes, duración de viajes, servicios, sucursales y rutas.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Instalacion
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Clonar el Repositorio de git
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+git clone https://github.com/Jack-Christopher/Busify.git
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Moverse al directorio del proyecto
 
-## Laravel Sponsors
+```bash
+cd Busify
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Descargar Dependencias del Proyecto
 
-### Premium Partners
+Como las dependencias del proyecto las maneja **composer** debemos ejecutar el comando:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```bash
+composer install
+npm install
+```
 
-## Contributing
+### Configurar Entorno
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+La configuración del entorno se hace en el archivo **.env** pero esé archivo no se puede versionar según las restricciones del archivo **.gitignore**, igualmente en el proyecto hay un archivo de ejemplo  **.env.example** debemos copiarlo con el siguiente comando:
 
-## Code of Conduct
+```bash
+cp .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Luego es necesario modificar los valores de las variables de entorno para adecuar la configuración a nuestro entorno de desarrollo, por ejemplo los parámetros de conexión a la base de datos.
 
-## Security Vulnerabilities
+### Generar Clave de Seguridad de la Aplicación
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan key:generate
+```
 
-## License
+### Migrar la Base de Datos
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+el proyecto ya tiene los modelos, migraciones y seeders generados. Entonces lo único que nos hace falta es ejecutar la migración y ejecutar el siguiente comando:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+- **migrate:fresh** ejecuta la migración **eliminando** todas las tablas y volviendo a generarlas.
+- **--seed** ejecuta los Seeders habilitados
+
+## Características
+
+- Renderizado de un calendario para visualizar los viajes disponibles.
+- Funciones para mostrar y crear viajes.
+- Controlador, modelo, migración y página relacionados con los viajes.
+- Relación y funciones para el modelo "UbigeoZone".
+- Relaciones y funciones para el modelo "Ruta".
+- Controlador, modelo y página para la duración de los viajes.
+- Rutas para los viajes y la duración de los viajes.
+- Opciones para los viajes y la duración de los viajes.
+- Función para obtener el nombre de "Ubigeo".
+- Redireccionamiento para registrar los datos de duración del viaje desde la zona.
+- Funciones para mostrar y crear servicios.
+- Página para mostrar un servicio específico.
+- Página para crear un servicio específico.
+- Página para mostrar una sucursal específica.
+- Página para crear una sucursal específica.
+- Menú lateral con rutas.
+- Controlador, modelo, migración y página relacionados con las sucursales.
+- Cambios menores.
+
+## Uso
+
+Una vez que hayas configurado e iniciado el proyecto, puedes acceder a él en tu navegador web. Asegúrate de que el servidor de desarrollo esté en ejecución.
+
+El proyecto Busify te permitirá realizar las siguientes acciones:
+
+- Ver y reservar boletos de viaje disponibles.
+- Explorar los servicios y sucursales disponibles.
+- Crear nuevos viajes, duración de viajes, servicios y sucursales según sea necesario.
+
+## Contribución
+
+Si deseas contribuir al proyecto Busify, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama para tu contribución.
+3. Realiza tus cambios y mejoras en la nueva rama.
+4. Asegúrate de que tus cambios sean claros y estén bien documentados.
+5. Envía una pull request para revisar tus cambios.
+
+## Licencia
+
+Este proyecto está bajo la licencia . Consulta el archivo LICENSE para obtener más detalles.
+
