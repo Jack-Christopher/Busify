@@ -107,5 +107,5 @@ Si deseas contribuir al proyecto Busify, sigue estos pasos:
 
 ## Licencia
 
-Este proyecto está bajo la licencia . Consulta el archivo LICENSE para obtener más detalles.
+El marco de Laravel es un software de código abierto con licencia bajo la [MIT license](https://opensource.org/licenses/MIT).
 
